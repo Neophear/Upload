@@ -1,0 +1,73 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+    <head runat="server">
+        <title runat="server" id="Title">Cyber-Blade.dk - Upload</title>
+	    <link href="style.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <form id="form1" runat="server">
+            <center>
+                <table cellspacing="0" cellpadding="0" border="0" width="800px">
+			        <tr>
+				        <td style="<%= "width:255px;height:101px;background-image:url('" + this.ResolveClientUrl("~/images/title.gif") + "');background-repeat:no-repeat;background-color:#FFFFFF;" %>"></td>
+				        <td style="width:335px;" class="background">
+                            <asp:Label ID="lblTitle" runat="server"></asp:Label>
+                        </td>
+				        <td style="width:180px;" class="background">
+                            <asp:LoginView ID="LoginView1" runat="server">
+                                <LoggedInTemplate>
+                                    Velkommen <asp:LoginName ID="LoginName1" runat="server" />
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <asp:LoginStatus ID="LoginStatus1" runat="server" LogoutText="Log ud" LogoutPageUrl="~/Default.aspx" />
+                                </LoggedInTemplate>
+                                <AnonymousTemplate>
+				                    <asp:Login ID="Login1" runat="server" PasswordRequiredErrorMessage="Password er påkrævet"
+                                        RememberMeText="Husk mig" TitleText="<b>Log Ind</b>" UserNameLabelText="Brugernavn:"
+                                        UserNameRequiredErrorMessage="Brugernavn er påkrævet" FailureText="Dit login mislykkedes" VisibleWhenLoggedIn="False" LoginButtonText="Log Ind" PasswordRecoveryText="Glemt password" PasswordRecoveryUrl="~/public/RecoverPassword.aspx">
+                                    </asp:Login>
+                                </AnonymousTemplate>
+                            </asp:LoginView>
+				        </td>
+			        </tr>
+			        <tr>
+				        <td style="<%= "width:800px;height:48px;background-image:url('" + this.ResolveClientUrl("~/images/menu.gif") + "');" %>" colspan="3">
+					        <table cellspacing="0" cellpadding="0" border="0">
+						        <tr>
+							        <td>
+								        <img src='<%= this.ResolveClientUrl("~/images/menu_left.gif") %>' alt="Menu" />
+							        </td>
+							        <td style="width:100%;text-align:left;">
+                                        <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1" Orientation="Horizontal" Font-Bold="True" OnDataBound="Menu1_DataBound1">
+                                            <StaticItemTemplate>
+                                                <%# Eval("Text") + "<span style='color:#000000;'>|</span>"%>
+                                            </StaticItemTemplate>
+                                        </asp:Menu>
+                                        <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="false" />
+        							</td>
+							        <td>
+								        <img src='<%= this.ResolveClientUrl("~/images/menu_right.gif") %>' alt="Menu" />
+							        </td>
+						        </tr>
+					        </table>
+				        </td>
+			        </tr>
+			        <tr>
+				        <td style="width:100%;" colspan="3" class="background">
+                            <asp:contentplaceholder id="ContentPlaceHolder1" runat="server">
+                            </asp:contentplaceholder>
+                            <br />
+				        </td>
+			        </tr>
+			        <tr>
+				        <td style="<%= "width:100%;height:10px;background-image:url('" + this.ResolveClientUrl("~/images/line.gif") + "');" %>" colspan="3"></td>
+			        </tr>
+		        </table>
+		    </center>
+		</form>
+    </body>
+</html>

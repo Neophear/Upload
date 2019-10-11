@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode url="Default.aspx?nothing" title="Home"  description="Dette er roden">
+        <siteMapNode url="Default.aspx" title="Home"  description="Forside" roles="*" />
+        <siteMapNode url="visits.aspx" title="Besøgstæller"  description="Besøgstæller" />
+        <siteMapNode url="links.aspx" title="Links"  description="Upload/se links" />
+        <siteMapNode url="public/createuser.aspx" title="Opret Bruger"  description="Opret bruger" roles="anonymous" />
+        <siteMapNode url="private/upload.aspx" title="Upload Filer"  description="Upload filer" roles="NormalUser, Admin" />
+	    <siteMapNode url="private/edituser.aspx" title="Bruger" description="Rediger din bruger" roles="NormalUser, Admin" />
+		<siteMapNode url="tagwall.aspx" title="Tagwall"  description="Her kan du skrive beskeder til siden" />
+	    <siteMapNode url="contact.aspx" title="Kontakt" description="Kontakt mig" />
+        <siteMapNode url="admin/admin.aspx" title="Admin" description="Admin panel" roles="Admin" />
+		<siteMapNode url="about.aspx" title="About" description="Her kan du læse info om siden" />
+    </siteMapNode>
+</siteMap>

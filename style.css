@@ -1,0 +1,41 @@
+body
+{
+	background:#CCCCCC;
+	text-align:center;
+}
+input
+{
+	font:10px Verdana;
+}
+p
+{
+	font-size:10pt;
+	font-family:Verdana;
+}
+td
+{
+	text-align:center;
+	font-size:10pt;
+	font-family:Verdana;
+}
+h1
+{
+	font-family:Verdana;
+	font-size:15pt;
+	text-align:center;
+}
+a
+{
+	font-family:Verdana;
+	font-size:10pt;
+	color:#336699;
+	text-decoration:none;
+}
+div
+{
+	text-align:center;
+}
+.background
+{
+	background:#FFFFFF;
+}
